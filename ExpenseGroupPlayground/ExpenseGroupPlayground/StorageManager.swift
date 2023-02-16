@@ -1,3 +1,10 @@
+//
+//  StorageManager.swift
+//  Extract Bank
+//
+//  Created by Jovan Radivojsa on 16.2.23.
+//
+
 import Foundation
 
 class StorageManager {

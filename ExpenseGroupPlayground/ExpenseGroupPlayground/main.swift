@@ -7,8 +7,6 @@
 
 import Foundation
 
+
 print("Hello, World!")
 
-enum ExpenseGroups {
-    
-}

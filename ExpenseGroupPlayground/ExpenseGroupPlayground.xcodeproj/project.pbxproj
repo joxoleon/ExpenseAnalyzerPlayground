@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		C06C0E05299E934F00DC6FF4 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06C0E04299E934F00DC6FF4 /* main.swift */; };
+		C06C0E0D299E942200DC6FF4 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06C0E0C299E942200DC6FF4 /* StorageManager.swift */; };
+		C06C0E0F299EA03200DC6FF4 /* Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06C0E0E299EA03200DC6FF4 /* Tags.swift */; };
+		C06C0E11299EA06400DC6FF4 /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06C0E10299EA06400DC6FF4 /* Filters.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +28,9 @@
 /* Begin PBXFileReference section */
 		C06C0E01299E934F00DC6FF4 /* ExpenseGroupPlayground */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ExpenseGroupPlayground; sourceTree = BUILT_PRODUCTS_DIR; };
 		C06C0E04299E934F00DC6FF4 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		C06C0E0C299E942200DC6FF4 /* StorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		C06C0E0E299EA03200DC6FF4 /* Tags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tags.swift; sourceTree = "<group>"; };
+		C06C0E10299EA06400DC6FF4 /* Filters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +63,20 @@
 		C06C0E03299E934F00DC6FF4 /* ExpenseGroupPlayground */ = {
 			isa = PBXGroup;
 			children = (
+				C06C0E0B299E941500DC6FF4 /* Storage */,
 				C06C0E04299E934F00DC6FF4 /* main.swift */,
+				C06C0E0C299E942200DC6FF4 /* StorageManager.swift */,
+				C06C0E0E299EA03200DC6FF4 /* Tags.swift */,
+				C06C0E10299EA06400DC6FF4 /* Filters.swift */,
 			);
 			path = ExpenseGroupPlayground;
+			sourceTree = "<group>";
+		};
+		C06C0E0B299E941500DC6FF4 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -121,6 +138,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C06C0E05299E934F00DC6FF4 /* main.swift in Sources */,
+				C06C0E11299EA06400DC6FF4 /* Filters.swift in Sources */,
+				C06C0E0D299E942200DC6FF4 /* StorageManager.swift in Sources */,
+				C06C0E0F299EA03200DC6FF4 /* Tags.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
