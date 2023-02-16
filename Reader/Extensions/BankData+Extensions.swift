@@ -1,3 +1,10 @@
+//
+//  BankData + Extensions.swift
+//  ExtractBank
+//
+//  Created by Jovan Radivojsa on 12.2.23.
+//
+
 import Foundation
 
 extension Account {
