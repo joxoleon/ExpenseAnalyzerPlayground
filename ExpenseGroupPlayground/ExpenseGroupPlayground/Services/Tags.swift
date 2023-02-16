@@ -14,6 +14,11 @@ import Foundation
 class Tag: Codable {
     let name: String
     let substringRules: [String]
+    
+    init(name: String, subStringRules: [String]) {
+        self.name = name
+        self.substringRules = subStringRules
+    }
 }
 
 class TagData: Codable {
@@ -37,6 +42,15 @@ class TagStore {
     
     // MARK: - public methods
     
+    func add(_ tag: Tag) {
+        guard tags[tag.name] == nil else {
+            assertionFailure("Trying to overwrite an existing tag")
+            return
+        }
+        tagData.tags.append(tag)
+        tags[tag.name] = tag
+    }
+    
     func save() {
         StorageManager.shared.save(codable: tagData, to: TagStoreConstants.tagFileName)
     }
@@ -47,8 +61,12 @@ class TagStore {
             return
         }
         self.tagData = tagData
-        
-        // Populate dictionary mapping tag names to tags
+        initializeDerivedProperties()
+    }
+    
+    // MARK: - Private methods
+    
+    private func initializeDerivedProperties() {
         self.tags.removeAll()
         for tag in tagData.tags {
             tags[tag.name] = tag
