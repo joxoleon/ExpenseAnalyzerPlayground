@@ -32,9 +32,12 @@ class TagStore {
     private init() {}
     static let shared = TagStore()
     
-    // MARK: - Public properties
+    // MARK: - Derived properties
     
-    var tags: [String: Tag] = [:]
+    var tagsByName: [String: Tag] = [:]
+    var tags: [Tag] {
+        return tagData.tags
+    }
     
     // MARK: - Private properties
     
@@ -43,12 +46,12 @@ class TagStore {
     // MARK: - public methods
     
     func add(_ tag: Tag) {
-        guard tags[tag.name] == nil else {
+        guard tagsByName[tag.name] == nil else {
             assertionFailure("Trying to overwrite an existing tag")
             return
         }
         tagData.tags.append(tag)
-        tags[tag.name] = tag
+        tagsByName[tag.name] = tag
     }
     
     func save() {
@@ -67,9 +70,9 @@ class TagStore {
     // MARK: - Private methods
     
     private func initializeDerivedProperties() {
-        self.tags.removeAll()
+        self.tagsByName.removeAll()
         for tag in tagData.tags {
-            tags[tag.name] = tag
+            tagsByName[tag.name] = tag
         }
     }
 }

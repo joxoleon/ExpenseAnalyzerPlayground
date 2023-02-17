@@ -22,7 +22,7 @@ fileprivate func saveTags() {
 }
 
 fileprivate func testState() {
-    let tags = TagStore.shared.tags
+    let tags = TagStore.shared.tagsByName
     print(tags.count)
     for tag in tags.values {
         print("\(tag.description)")

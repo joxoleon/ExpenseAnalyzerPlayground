@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C024D512299F03910090F7D6 /* Foundation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C024D511299F03910090F7D6 /* Foundation+Extensions.swift */; };
 		C06C0E05299E934F00DC6FF4 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06C0E04299E934F00DC6FF4 /* main.swift */; };
 		C06C0E0D299E942200DC6FF4 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06C0E0C299E942200DC6FF4 /* StorageManager.swift */; };
 		C06C0E0F299EA03200DC6FF4 /* Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06C0E0E299EA03200DC6FF4 /* Tags.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C024D511299F03910090F7D6 /* Foundation+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Foundation+Extensions.swift"; sourceTree = "<group>"; };
 		C06C0E01299E934F00DC6FF4 /* ExpenseGroupPlayground */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ExpenseGroupPlayground; sourceTree = BUILT_PRODUCTS_DIR; };
 		C06C0E04299E934F00DC6FF4 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		C06C0E0C299E942200DC6FF4 /* StorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				C06C0E12299EA16400DC6FF4 /* Tag+Extensions.swift */,
 				C06C0E10299EA06400DC6FF4 /* Filters.swift */,
 				C06C0E18299EAC8C00DC6FF4 /* Rules.swift */,
+				C024D511299F03910090F7D6 /* Foundation+Extensions.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 				C06C0E19299EAC8C00DC6FF4 /* Rules.swift in Sources */,
 				C06C0E1B299EADB600DC6FF4 /* TestingRules.swift in Sources */,
 				C06C0E0F299EA03200DC6FF4 /* Tags.swift in Sources */,
+				C024D512299F03910090F7D6 /* Foundation+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
