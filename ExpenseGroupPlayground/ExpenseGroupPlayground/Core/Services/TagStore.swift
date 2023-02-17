@@ -30,6 +30,7 @@ class TagStore {
     var tags: [Tag] {
         return tagData.tags
     }
+    var mainTags: MainTagContainer?
     
     // MARK: - Private properties
     
@@ -66,5 +67,6 @@ class TagStore {
         for tag in tagData.tags {
             tagsByName[tag.name] = tag
         }
+        mainTags = MainTagContainer()
     }
 }

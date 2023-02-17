@@ -12,7 +12,7 @@ func testDescriptions() {
 }
 
 fileprivate func initAfterRefactor() {
-    TagStore.shared.addTagsAndFiltersFromCode()
+    TagStore.shared.initializeFromCode()
     TagStore.shared.save()
     TagStore.shared.load()
     
@@ -23,6 +23,9 @@ fileprivate func initAfterRefactor() {
     unfilteredDescriptions.removeAll { filteredDescriptions.contains($0) }
     let multipleOccurrencesArray = unfilteredDescriptions.removeElementsAppearingLessThan(numberOfTimes: 2)
     printArray(title: "multiple occurrences", arr: multipleOccurrencesArray)
+    let tag = TagStore.shared.mainTags?.gasStations
+    print(tag?.description ?? "")
+    TagStore.shared.save()
 }
 
 //fileprivate func testFilterStore() {
@@ -66,7 +69,7 @@ fileprivate func initAfterRefactor() {
 //    var unfilteredDescriptions = uniqueDescriptions
 //    unfilteredDescriptions.removeAll { filteredDescriptions.contains($0) }
 //    printArray(title: "UNFILTERED DESCRIPTIONS", arr: unfilteredDescriptions)
-//    
+//
 //}
 //
 //fileprivate func loadServices() {

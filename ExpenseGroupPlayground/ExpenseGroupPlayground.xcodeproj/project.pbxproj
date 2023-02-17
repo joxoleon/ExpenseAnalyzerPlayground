@@ -17,9 +17,9 @@
 		C06C0E17299EA37900DC6FF4 /* TestingTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06C0E16299EA37900DC6FF4 /* TestingTags.swift */; };
 		C06C0E19299EAC8C00DC6FF4 /* PersistableRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06C0E18299EAC8C00DC6FF4 /* PersistableRule.swift */; };
 		C06C0E1B299EADB600DC6FF4 /* TestingRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06C0E1A299EADB600DC6FF4 /* TestingRules.swift */; };
-		C0D41635299F9DCE003931F6 /* TestingFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D41634299F9DCE003931F6 /* TestingFilters.swift */; };
 		C0D4163A299FABCB003931F6 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D41639299FABCB003931F6 /* Tag.swift */; };
 		C0D4163F299FE5F9003931F6 /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D4163E299FE5F9003931F6 /* Rule.swift */; };
+		C0D41643299FE86E003931F6 /* TagStore+MainTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D41642299FE86E003931F6 /* TagStore+MainTags.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,9 +46,9 @@
 		C06C0E16299EA37900DC6FF4 /* TestingTags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingTags.swift; sourceTree = "<group>"; };
 		C06C0E18299EAC8C00DC6FF4 /* PersistableRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistableRule.swift; sourceTree = "<group>"; };
 		C06C0E1A299EADB600DC6FF4 /* TestingRules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingRules.swift; sourceTree = "<group>"; };
-		C0D41634299F9DCE003931F6 /* TestingFilters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingFilters.swift; sourceTree = "<group>"; };
 		C0D41639299FABCB003931F6 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		C0D4163E299FE5F9003931F6 /* Rule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rule.swift; sourceTree = "<group>"; };
+		C0D41642299FE86E003931F6 /* TagStore+MainTags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TagStore+MainTags.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,8 +92,8 @@
 			isa = PBXGroup;
 			children = (
 				C06C0E0E299EA03200DC6FF4 /* TagStore.swift */,
-				C024D511299F03910090F7D6 /* Foundation+Extensions.swift */,
 				C024D519299F08580090F7D6 /* TagStore+Extensions.swift */,
+				C0D41642299FE86E003931F6 /* TagStore+MainTags.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -104,7 +104,6 @@
 				C06C0E16299EA37900DC6FF4 /* TestingTags.swift */,
 				C06C0E1A299EADB600DC6FF4 /* TestingRules.swift */,
 				C024D517299F07D20090F7D6 /* TestingDescriptions.swift */,
-				C0D41634299F9DCE003931F6 /* TestingFilters.swift */,
 			);
 			path = Testing;
 			sourceTree = "<group>";
@@ -123,6 +122,7 @@
 		C0D4163B299FABD9003931F6 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				C0D41641299FE80D003931F6 /* Utility */,
 				C0D41640299FE61F003931F6 /* Storage */,
 				C0D41638299FABC0003931F6 /* Types */,
 				C06C0E14299EA1D200DC6FF4 /* Services */,
@@ -136,6 +136,14 @@
 				C06C0E0C299E942200DC6FF4 /* StorageManager.swift */,
 			);
 			path = Storage;
+			sourceTree = "<group>";
+		};
+		C0D41641299FE80D003931F6 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				C024D511299F03910090F7D6 /* Foundation+Extensions.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,11 +205,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0D4163A299FABCB003931F6 /* Tag.swift in Sources */,
+				C0D41643299FE86E003931F6 /* TagStore+MainTags.swift in Sources */,
 				C024D51E299F0F630090F7D6 /* Filter.swift in Sources */,
 				C06C0E05299E934F00DC6FF4 /* main.swift in Sources */,
 				C06C0E17299EA37900DC6FF4 /* TestingTags.swift in Sources */,
 				C06C0E0D299E942200DC6FF4 /* StorageManager.swift in Sources */,
-				C0D41635299F9DCE003931F6 /* TestingFilters.swift in Sources */,
 				C06C0E19299EAC8C00DC6FF4 /* PersistableRule.swift in Sources */,
 				C024D51A299F08580090F7D6 /* TagStore+Extensions.swift in Sources */,
 				C06C0E1B299EADB600DC6FF4 /* TestingRules.swift in Sources */,

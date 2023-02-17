@@ -6,6 +6,8 @@
 ////
 import Foundation
 
+// MARK: - Initialize tags from code
+
 extension TagStore {
     static var everythingTag: Tag = {
         let allTags = TagStore.shared.tags
@@ -13,7 +15,7 @@ extension TagStore {
         return tag
     }()
     
-    public func addTagsAndFiltersFromCode() {
+    public func initializeFromCode() {
         
         createTopLevelTag("Taxi services", [
             createTagWithMultipleSubstrings("CarGo", ["cargo", "go technologies"]),

@@ -51,6 +51,18 @@ extension Tag {
     // MARK: - Utility
     
     var description: String {
-        "tagName: \(name), tagRules: \(rules)"
+        "tagName: \(name), tagRules: \(rules), tags: \(tags.description)"
+    }
+}
+
+fileprivate extension [Tag] {
+    var description: String {
+        guard !self.isEmpty else { return "[]"}
+        var result = "[\n"
+        for t in self {
+            result += "    " + t.description + "\n"
+        }
+        result += "]"
+        return result
     }
 }
