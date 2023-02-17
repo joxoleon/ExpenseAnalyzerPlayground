@@ -16,6 +16,9 @@
 		C0650A68299FF06A0076FCA2 /* TagStore+MainTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0650A5E299FF06A0076FCA2 /* TagStore+MainTags.swift */; };
 		C0650A69299FF06A0076FCA2 /* TagStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0650A5F299FF06A0076FCA2 /* TagStore.swift */; };
 		C0650A6A299FF06A0076FCA2 /* Foundation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0650A61299FF06A0076FCA2 /* Foundation+Extensions.swift */; };
+		C0650A6E299FF35A0076FCA2 /* BankData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0650A6D299FF35A0076FCA2 /* BankData.swift */; };
+		C0650A70299FF4060076FCA2 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0650A6F299FF4060076FCA2 /* Record.swift */; };
+		C0650A72299FF4510076FCA2 /* BankStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0650A71299FF4510076FCA2 /* BankStore.swift */; };
 		C0D4166C299FEF5A003931F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D4166B299FEF5A003931F6 /* AppDelegate.swift */; };
 		C0D4166E299FEF5A003931F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D4166D299FEF5A003931F6 /* ViewController.swift */; };
 		C0D41670299FEF5C003931F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0D4166F299FEF5C003931F6 /* Assets.xcassets */; };
@@ -52,6 +55,9 @@
 		C0650A5E299FF06A0076FCA2 /* TagStore+MainTags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TagStore+MainTags.swift"; sourceTree = "<group>"; };
 		C0650A5F299FF06A0076FCA2 /* TagStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagStore.swift; sourceTree = "<group>"; };
 		C0650A61299FF06A0076FCA2 /* Foundation+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Foundation+Extensions.swift"; sourceTree = "<group>"; };
+		C0650A6D299FF35A0076FCA2 /* BankData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankData.swift; sourceTree = "<group>"; };
+		C0650A6F299FF4060076FCA2 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		C0650A71299FF4510076FCA2 /* BankStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankStore.swift; sourceTree = "<group>"; };
 		C0D41668299FEF5A003931F6 /* EurobankExpenseTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EurobankExpenseTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0D4166B299FEF5A003931F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0D4166D299FEF5A003931F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -123,9 +129,8 @@
 		C0650A5C299FF06A0076FCA2 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				C0650A5D299FF06A0076FCA2 /* TagStore+Extensions.swift */,
-				C0650A5E299FF06A0076FCA2 /* TagStore+MainTags.swift */,
-				C0650A5F299FF06A0076FCA2 /* TagStore.swift */,
+				C0650A6C299FF32E0076FCA2 /* Records */,
+				C0650A6B299FF3120076FCA2 /* Tags */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -136,6 +141,26 @@
 				C0650A61299FF06A0076FCA2 /* Foundation+Extensions.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		C0650A6B299FF3120076FCA2 /* Tags */ = {
+			isa = PBXGroup;
+			children = (
+				C0650A5D299FF06A0076FCA2 /* TagStore+Extensions.swift */,
+				C0650A5E299FF06A0076FCA2 /* TagStore+MainTags.swift */,
+				C0650A5F299FF06A0076FCA2 /* TagStore.swift */,
+			);
+			path = Tags;
+			sourceTree = "<group>";
+		};
+		C0650A6C299FF32E0076FCA2 /* Records */ = {
+			isa = PBXGroup;
+			children = (
+				C0650A6D299FF35A0076FCA2 /* BankData.swift */,
+				C0650A71299FF4510076FCA2 /* BankStore.swift */,
+				C0650A6F299FF4060076FCA2 /* Record.swift */,
+			);
+			path = Records;
 			sourceTree = "<group>";
 		};
 		C0D4165F299FEF5A003931F6 = {
@@ -325,10 +350,13 @@
 				C0650A65299FF06A0076FCA2 /* Tag.swift in Sources */,
 				C0650A62299FF06A0076FCA2 /* Rule.swift in Sources */,
 				C0650A63299FF06A0076FCA2 /* Filter.swift in Sources */,
+				C0650A70299FF4060076FCA2 /* Record.swift in Sources */,
 				C0650A66299FF06A0076FCA2 /* StorageManager.swift in Sources */,
+				C0650A72299FF4510076FCA2 /* BankStore.swift in Sources */,
 				C0D4166E299FEF5A003931F6 /* ViewController.swift in Sources */,
 				C0D4166C299FEF5A003931F6 /* AppDelegate.swift in Sources */,
 				C0650A64299FF06A0076FCA2 /* PersistableRule.swift in Sources */,
+				C0650A6E299FF35A0076FCA2 /* BankData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

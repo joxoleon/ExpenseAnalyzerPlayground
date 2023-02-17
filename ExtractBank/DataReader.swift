@@ -34,8 +34,7 @@ class DataReader {
     // MARK: - Public methods
     
     func readDataFromFile() {
-        let projectDirectory = URL(fileURLWithPath: #file).deletingLastPathComponent().deletingLastPathComponent()
-        let fileURL = projectDirectory.appendingPathComponent("Resources/Izvodi.txt")
+        let fileURL = StorageManager.shared.fileUrlInDocumentsDirectory(fileName: "Izvodi.txt")
         
         do {
             let fileContent = try String(contentsOf: fileURL, encoding: .utf8)

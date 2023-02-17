@@ -52,4 +52,11 @@ import PDFKit
 //
 //Bank.shared.saveToStorage()
 
-testDescriptions()
+//testDescriptions()
+
+testExpenseReading()
+
+func testExpenseReading() {
+    Bank.shared.initialize()
+    print(Bank.shared.allExpenses.first!.expenseDescription)
+}

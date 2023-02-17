@@ -43,4 +43,9 @@ class StorageManager {
         }
         return nil
     }
+    
+    func fileUrlInDocumentsDirectory(fileName: String) -> URL {
+        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        return documentsDirectory.appendingPathComponent(fileName)
+    }
 }
