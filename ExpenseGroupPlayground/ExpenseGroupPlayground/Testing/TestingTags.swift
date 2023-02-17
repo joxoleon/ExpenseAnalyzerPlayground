@@ -8,8 +8,9 @@
 import Foundation
 
 func testTags() {
-    loadTags()
+    addTags()
     testState()
+    saveTags()
 }
 
 fileprivate func loadTags() {
@@ -39,7 +40,7 @@ fileprivate func addTags() {
     add("Lidl", "lidl")
     add("Sumadija", "sumadija")
     add("Aroma", "aroma")
-    add("Idea", ["mp102", "mp321"])
+    add("Idea", regex: "mp\\d+ ")
     add("Vero", "vero")
     add("Maxi", "maxi")
     add("Tempo", "tempo")
@@ -52,7 +53,7 @@ fileprivate func addTags() {
     // Clothes
     add("C & A", "c & a")
     add("Reserved", "reserved")
-    add("Zara", ["zara usce", "zara 67"])
+    add("Zara", regex: "^zara\\s")
     add("Koton", "koton")
     add("Cropp", "cropp")
     add("Peek & Cloppenburg", "rs37")
@@ -73,7 +74,7 @@ fileprivate func addTags() {
     add("MOL", "mol serbia")
     add("EKO", "eko serbia")
     add("EURO Petrol", "euro petrol")
-    add("NIS", ["bs tosin bunar", "bs novi beograd"])
+    add("NIS", regex: "^bs\\s")
     add("Lukoil", "lukoil")
     add("OMV", "omv")
     
@@ -85,10 +86,14 @@ fileprivate func addTags() {
     add("Apple", "apple")
 }
 
-fileprivate func add(_ name: String, _ rule: String) {
-    TagStore.shared.add(Tag(name, rule))
+fileprivate func add(_ name: String, _ substring: String) {
+    TagStore.shared.add(Tag(name, .substring(substring: substring)))
 }
 
-fileprivate func add(_ name: String, _ rule: [String]) {
-    TagStore.shared.add(Tag(name, rule))
+fileprivate func add(_ name: String, _ substrings: [String]) {
+    TagStore.shared.add(Tag(name, .substrings(substrings: substrings)))
+}
+
+fileprivate func add(_ name: String, regex: String) {
+    TagStore.shared.add(Tag(name, .regex(regex: regex)))
 }

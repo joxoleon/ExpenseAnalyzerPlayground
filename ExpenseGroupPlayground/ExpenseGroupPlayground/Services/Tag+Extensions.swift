@@ -11,17 +11,17 @@ extension Tag {
     
     // MARK: - Initialization
     
-    convenience init(_ tagName: String, _ tagRule: String) {
-        self.init(name: tagName, subStringRules: [tagRule])
+    convenience init(_ tagName: String, _ tagRule: FilteringRule) {
+        self.init(name: tagName, rules: [tagRule])
     }
     
-    convenience init(_ tagName: String, _ tagRules: [String]) {
-        self.init(name: tagName, subStringRules: tagRules)
+    convenience init(_ tagName: String, _ tagRules: [FilteringRule]) {
+        self.init(name: tagName, rules: tagRules)
     }
     
     // MARK: - Utility
     
     var description: String {
-        "tagName: \(name), tagRules: \(substringRules)"
+        "tagName: \(name), tagRules: \(rules)"
     }
 }

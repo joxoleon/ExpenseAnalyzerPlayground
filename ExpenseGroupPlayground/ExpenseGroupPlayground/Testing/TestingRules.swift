@@ -7,12 +7,14 @@
 
 import Foundation
 
+
 func testRules() {
     testRegularExpressionRules()
 }
 
 func testRegularExpressionRules() {
-    let rule = RegexRule(regularExpression: "mp\\d+ ")
+    let rule = FilteringRule.regex(regex: "mp\\d+ ")
+//    let rule = RegexRule(regularExpression: "mp\\d+ ")
     print("should be true")
     print(rule.doesSatisfy(description: "mp123 asdfasf asfd asdf"))
     print(rule.doesSatisfy(description: "mp1 sdfsdaf"))
@@ -29,7 +31,7 @@ func testRegularExpressionRules() {
 }
 
 func testSubstringRules() {
-    let rule = SubstringRule(subString: "vero")
+    let rule = FilteringRule.substring(substring: "vero")
     
     print("should be true")
     print(rule.doesSatisfy(description: "asfdasfVEROsadfasfd"))

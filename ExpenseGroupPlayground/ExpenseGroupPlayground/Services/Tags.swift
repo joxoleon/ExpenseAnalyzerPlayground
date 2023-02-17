@@ -13,11 +13,11 @@ import Foundation
 
 class Tag: Codable {
     let name: String
-    let substringRules: [String]
+    let rules: [FilteringRule]
     
-    init(name: String, subStringRules: [String]) {
+    init(name: String, rules: [FilteringRule]) {
         self.name = name
-        self.substringRules = subStringRules
+        self.rules = rules
     }
 }
 
