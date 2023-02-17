@@ -39,25 +39,11 @@ class Bank {
     }
     
     func loadFromStorage() {
-//        print("load from storage - first clear allExpenses")
-//        allExpenses = []
-//        print("all expenses count: \(allExpenses.count)")
-//        let expenses: AllExpenses = StorageManager.shared.load(from: "allExpenses.json") ?? AllExpenses(allExpenses: [])
-//        self.allExpenses = expenses.allExpenses
-//        print("all expenses count: \(allExpenses.count)")
-        
         let accountData: AccountData = StorageManager.shared.load(from: "accountData.json") ?? AccountData(accounts: [:])
         self.accounts = accountData.accounts
-        print("all expenses count: \(allExpenses.count)")
-        
     }
 
     func saveToStorage() {
-//        // Save all expenses
-//        let allExpenses = AllExpenses(allExpenses: allExpenses)
-//        StorageManager.shared.save(codable: allExpenses, to: "allExpenses.json")
-    
-        // Save account data
         let accountData = AccountData(accounts: accounts)
         StorageManager.shared.save(codable: accountData, to: "accountData.json")
     }

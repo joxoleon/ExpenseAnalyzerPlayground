@@ -7,5 +7,6 @@
 
 import Foundation
 
-testTags()
+//testTags()
 //testRules()
+testDescriptions()

@@ -5,11 +5,11 @@ import PDFKit
 
 // MARK: - Main
 
-Bank.shared.initialize()
-print(Bank.shared.allExpenses.count)
-let expense = Bank.shared.allExpenses.first!
-print(expense.expenseDescription)
-print(expense.date)
+//Bank.shared.loadFromStorage()
+//print(Bank.shared.allExpenses.count)
+//let expense = Bank.shared.allExpenses.first!
+//print(expense.expenseDescription)
+//print(expense.date)
 
 //let cargoGroup = ExpenseGroup(tag: .cargo)
 //print(cargoGroup.defaultDescription)
@@ -51,3 +51,5 @@ print(expense.date)
 //Bank.shared.loadFromStorage()
 //
 //Bank.shared.saveToStorage()
+
+testDescriptions()

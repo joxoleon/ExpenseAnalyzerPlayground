@@ -76,3 +76,7 @@ class TagStore {
         }
     }
 }
+
+extension Tag: FilterProtocol {
+    var allRules: [Rule] { return rules }
+}

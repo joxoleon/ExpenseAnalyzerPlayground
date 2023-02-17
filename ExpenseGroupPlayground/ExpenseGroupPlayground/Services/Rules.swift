@@ -7,8 +7,12 @@
 
 import Foundation
 
+protocol Filterable {
+    var description: String { get }
+}
+
 protocol Rule {
-    func doesSatisfy(description: String) -> Bool
+    func doesSatisfy(filterable: Filterable) -> Bool
 }
 
 enum FilteringRule: Codable {
@@ -18,11 +22,11 @@ enum FilteringRule: Codable {
 }
 
 extension FilteringRule: Rule {
-    func doesSatisfy(description: String) -> Bool {
+    func doesSatisfy(filterable: Filterable) -> Bool {
         switch self {
-        case .substring(let substring): return does(description: description, contain: substring)
-        case .regex(let regex): return check(description: description, for: regex)
-        case .substrings(let substrings): return does(description: description, contain: substrings)
+        case .substring(let substring): return does(description: filterable.description, contain: substring)
+        case .regex(let regex): return check(description: filterable.description, for: regex)
+        case .substrings(let substrings): return does(description: filterable.description, contain: substrings)
         }
     }
     
@@ -31,10 +35,11 @@ extension FilteringRule: Rule {
     }
     
     private func check(description: String, for regularExpression: String) -> Bool {
+        let d = description.lowercased()
         do {
             let regex = try NSRegularExpression(pattern: regularExpression, options: [])
-            let range = NSRange(location: 0, length: description.utf16.count)
-            return regex.firstMatch(in: description, options: [], range: range) != nil
+            let range = NSRange(location: 0, length: d.utf16.count)
+            return regex.firstMatch(in: d, options: [], range: range) != nil
         } catch {
             print("Error creating regular expression: \(error)")
             return false
@@ -70,5 +75,11 @@ extension Array where Element == FilteringRule {
         }
         result += "]"
         return result
+    }
+}
+
+extension String: Filterable {
+    var description: String {
+        return self
     }
 }

@@ -92,3 +92,9 @@ class FilterStore {
         }
     }
 }
+
+extension Filter: FilterProtocol {
+    var allRules: [Rule] {
+        allFilters
+    }
+}

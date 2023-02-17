@@ -20,3 +20,9 @@ extension Dictionary {
         }
     }
 }
+
+extension Array where Element == String {
+    func removeDuplicates() -> [Element]{
+        return Array(Set(self))
+    }
+}
