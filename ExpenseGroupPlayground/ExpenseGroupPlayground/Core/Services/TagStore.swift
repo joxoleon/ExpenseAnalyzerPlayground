@@ -39,7 +39,7 @@ class TagStore {
     
     func add(_ tag: Tag) {
         guard tagsByName[tag.name] == nil else {
-            assertionFailure("Trying to overwrite an existing tag")
+            // Avoid having multiple tags of the same type
             return
         }
         tagData.tags.append(tag)

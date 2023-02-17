@@ -7,21 +7,13 @@
 
 import Foundation
 
-protocol Filterable {
-    var description: String { get }
-}
-
-protocol Rule {
-    func doesSatisfy(filterable: Filterable) -> Bool
-}
-
-enum FilteringRule: Codable {
+enum PersistableRule: Codable {
     case substring(substring: String)
     case substrings(substrings: [String])
     case regex(regex: String)
 }
 
-extension FilteringRule: Rule {
+extension PersistableRule: Rule {
     func doesSatisfy(filterable: Filterable) -> Bool {
         switch self {
         case .substring(let substring): return does(description: filterable.description, contain: substring)
@@ -29,11 +21,31 @@ extension FilteringRule: Rule {
         case .substrings(let substrings): return does(description: filterable.description, contain: substrings)
         }
     }
-    
-    private func does(description: String, contain substring: String) -> Bool {
+}
+
+// MARK: - Substring rule
+
+extension PersistableRule {
+    fileprivate func does(description: String, contain substring: String) -> Bool {
         return description.lowercased().contains(substring.lowercased())
     }
-    
+}
+
+// MARK: - Substrings rule
+
+extension PersistableRule {
+    private func does(description: String, contain substrings: [String]) -> Bool {
+        let ld = description.lowercased()
+        for s in substrings where ld.contains(s.lowercased()){
+            return true
+        }
+        return false
+    }
+}
+
+// MARK: - Regular expression rule
+
+extension PersistableRule {
     private func check(description: String, for regularExpression: String) -> Bool {
         let d = description.lowercased()
         do {
@@ -45,19 +57,11 @@ extension FilteringRule: Rule {
             return false
         }
     }
-    
-    private func does(description: String, contain substrings: [String]) -> Bool {
-        let ld = description.lowercased()
-        for s in substrings where ld.contains(s.lowercased()){
-            return true
-        }
-        return false
-    }
 }
 
 // MARK: - Utility
 
-extension FilteringRule {
+extension PersistableRule {
     var description: String {
         switch self {
         case .substring(let substr): return "Contains substring: \(substr)"
@@ -67,7 +71,7 @@ extension FilteringRule {
     }
 }
 
-extension Array where Element == FilteringRule {
+extension Array where Element == PersistableRule {
     var description: String {
         var result = "["
         for e in self {
@@ -78,8 +82,10 @@ extension Array where Element == FilteringRule {
     }
 }
 
+// Added just for testing
+
 extension String: Filterable {
-    var description: String {
-        return self
-    }
+    var description: String { self }
+    var timeInterval: TimeInterval { TimeInterval() }
+    var amount: Double { Double() }
 }

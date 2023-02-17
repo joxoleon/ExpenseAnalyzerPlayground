@@ -8,31 +8,44 @@
 import Foundation
 
 class Tag: Codable {
-    let name: String
-    let rules: [FilteringRule]
     
-    init(name: String, rules: [FilteringRule]) {
+    // MARK: - Persistable properties
+    
+    let name: String
+    let tags: [Tag]
+    let rules: [PersistableRule]
+    
+    init(name: String, rules: [PersistableRule], tags: [Tag]) {
         self.name = name
         self.rules = rules
+        self.tags = tags
     }
+    
+    // MARK: - Computed properties
 }
 
 // MARK: - Extensions
 
 extension Tag: FilterProtocol {
-    var allRules: [Rule] { return rules }
+    var allRules: [Rule] {
+        var rules = self.rules
+        for tag in tags {
+            rules.append(contentsOf: tag.rules)
+        }
+        return rules
+    }
 }
 
 extension Tag {
     
     // MARK: - Initialization
     
-    convenience init(_ tagName: String, _ tagRule: FilteringRule) {
-        self.init(name: tagName, rules: [tagRule])
+    convenience init(_ tagName: String, _ tagRule: PersistableRule) {
+        self.init(name: tagName, rules: [tagRule], tags: [])
     }
     
-    convenience init(_ tagName: String, _ tagRules: [FilteringRule]) {
-        self.init(name: tagName, rules: tagRules)
+    convenience init(_ tagName: String, _ tagRules: [PersistableRule]) {
+        self.init(name: tagName, rules: tagRules, tags: [])
     }
     
     // MARK: - Utility

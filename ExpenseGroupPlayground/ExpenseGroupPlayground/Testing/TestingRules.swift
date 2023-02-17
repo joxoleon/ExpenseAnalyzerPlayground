@@ -13,7 +13,7 @@ func testRules() {
 }
 
 func testRegularExpressionRules() {
-    let rule = FilteringRule.regex(regex: "mp\\d+ ")
+    let rule = PersistableRule.regex(regex: "mp\\d+ ")
 //    let rule = RegexRule(regularExpression: "mp\\d+ ")
     print("should be true")
     print(rule.doesSatisfy(filterable: "mp123 asdfasf asfd asdf"))
@@ -32,7 +32,7 @@ func testRegularExpressionRules() {
 }
 
 func testSubstringRules() {
-    let rule = FilteringRule.substring(substring: "vero")
+    let rule = PersistableRule.substring(substring: "vero")
     
     print("should be true")
     print(rule.doesSatisfy(filterable: "asfdasfVEROsadfasfd"))

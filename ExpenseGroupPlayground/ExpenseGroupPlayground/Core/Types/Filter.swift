@@ -7,36 +7,23 @@
 
 import Foundation
 
-class Filter: Codable {
-    let name: String
-    let tagNames: [String]
-    let filteringRules: [FilteringRule]
-    
-    init(name: String, tagNames: [String], filteringRules: [FilteringRule]) {
-        self.name = name
-        self.tagNames = tagNames
-        self.filteringRules = filteringRules
-    }
+protocol Filterable {
+    var description: String { get }
+    var timeInterval: TimeInterval { get }
+    var amount: Double { get }
+}
 
-    // MARK: - Derived properties
+protocol FilterProtocol {
+    var allRules: [Rule] { get }
     
-    lazy var tags: [Tag] = {
-        return TagStore.shared.tagsByName[tagNames]
-    }()
-    
-    lazy var allFilters: [FilteringRule] = {
-        var filters: [FilteringRule] = []
-        for tag in tags {
-            filters.append(contentsOf: tag.rules)
-        }
-        return filters + filteringRules
-    }()
+    func filter(filterable: [Filterable]) -> [Filterable]
 }
 
 // MARK: - Extensions
+// MARK: Filter implementation
 
-extension Filter: FilterProtocol {
-    var allRules: [Rule] {
-        allFilters
+extension FilterProtocol {
+    func filter(filterable: [Filterable]) -> [Filterable] {
+        return filterable.compactMap { allRules.doesSatisfy(filterable:$0) == true ? $0 : nil }
     }
 }
