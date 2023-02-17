@@ -20,6 +20,8 @@
 		C06C0E17299EA37900DC6FF4 /* TestingTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06C0E16299EA37900DC6FF4 /* TestingTags.swift */; };
 		C06C0E19299EAC8C00DC6FF4 /* Rules.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06C0E18299EAC8C00DC6FF4 /* Rules.swift */; };
 		C06C0E1B299EADB600DC6FF4 /* TestingRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06C0E1A299EADB600DC6FF4 /* TestingRules.swift */; };
+		C0D41635299F9DCE003931F6 /* TestingFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D41634299F9DCE003931F6 /* TestingFilters.swift */; };
+		C0D41637299F9FF4003931F6 /* Filter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D41636299F9FF4003931F6 /* Filter+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,6 +51,8 @@
 		C06C0E16299EA37900DC6FF4 /* TestingTags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingTags.swift; sourceTree = "<group>"; };
 		C06C0E18299EAC8C00DC6FF4 /* Rules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rules.swift; sourceTree = "<group>"; };
 		C06C0E1A299EADB600DC6FF4 /* TestingRules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingRules.swift; sourceTree = "<group>"; };
+		C0D41634299F9DCE003931F6 /* TestingFilters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingFilters.swift; sourceTree = "<group>"; };
+		C0D41636299F9FF4003931F6 /* Filter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Filter+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,7 @@
 				C024D51B299F0A1C0090F7D6 /* FilterStore+Extensions.swift */,
 				C06C0E10299EA06400DC6FF4 /* Filters.swift */,
 				C06C0E18299EAC8C00DC6FF4 /* Rules.swift */,
+				C0D41636299F9FF4003931F6 /* Filter+Extensions.swift */,
 				C024D51D299F0F630090F7D6 /* FilterProtocol.swift */,
 				C024D511299F03910090F7D6 /* Foundation+Extensions.swift */,
 				C024D519299F08580090F7D6 /* TagStore+Extensions.swift */,
@@ -110,6 +115,7 @@
 				C06C0E16299EA37900DC6FF4 /* TestingTags.swift */,
 				C06C0E1A299EADB600DC6FF4 /* TestingRules.swift */,
 				C024D517299F07D20090F7D6 /* TestingDescriptions.swift */,
+				C0D41634299F9DCE003931F6 /* TestingFilters.swift */,
 			);
 			path = Testing;
 			sourceTree = "<group>";
@@ -174,10 +180,12 @@
 			files = (
 				C024D51E299F0F630090F7D6 /* FilterProtocol.swift in Sources */,
 				C06C0E05299E934F00DC6FF4 /* main.swift in Sources */,
+				C0D41637299F9FF4003931F6 /* Filter+Extensions.swift in Sources */,
 				C06C0E17299EA37900DC6FF4 /* TestingTags.swift in Sources */,
 				C06C0E13299EA16400DC6FF4 /* Tag+Extensions.swift in Sources */,
 				C06C0E11299EA06400DC6FF4 /* Filters.swift in Sources */,
 				C06C0E0D299E942200DC6FF4 /* StorageManager.swift in Sources */,
+				C0D41635299F9DCE003931F6 /* TestingFilters.swift in Sources */,
 				C06C0E19299EAC8C00DC6FF4 /* Rules.swift in Sources */,
 				C024D51A299F08580090F7D6 /* TagStore+Extensions.swift in Sources */,
 				C06C0E1B299EADB600DC6FF4 /* TestingRules.swift in Sources */,

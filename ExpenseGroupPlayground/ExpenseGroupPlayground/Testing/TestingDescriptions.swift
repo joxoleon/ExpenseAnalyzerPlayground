@@ -8,7 +8,19 @@
 import Foundation
 
 func testDescriptions() {
-    testUnmarkedExpensesWithDuplicates()
+    testFilterStore()
+}
+
+fileprivate func testFilterStore() {
+    FilterStore.shared.load()
+    TagStore.shared.load()
+    let descriptions = loadDescriptions()
+    let filter = FilterStore.everythingFilter
+    let filteredDescriptions = (filter.filter(filterable: descriptions) as? [String]) ?? []
+    var unfilteredDescriptions = descriptions
+    unfilteredDescriptions.removeAll { filteredDescriptions.contains($0) }
+    let multipleOccurrencesArray = unfilteredDescriptions.removeElementsAppearingLessThan(numberOfTimes: 2)
+    printArray(title: "multiple occurrences", arr: multipleOccurrencesArray)
 }
 
 fileprivate func testUnmarkedExpensesWithDuplicates() {
@@ -21,7 +33,11 @@ fileprivate func testUnmarkedExpensesWithDuplicates() {
 //    print("")
     var unfilteredDescriptions = descriptions
     unfilteredDescriptions.removeAll { filteredDescriptions.contains($0) }
-    printArray(title: "UNFILTERED DESCRIPTIONS", arr: unfilteredDescriptions)
+//    printArray(title: "UNFILTERED DESCRIPTIONS", arr: unfilteredDescriptions)
+    let multipleOccurrencesArray = unfilteredDescriptions.removeElementsAppearingLessThan(numberOfTimes: 2)
+    printArray(title: "multiple occurrences", arr: multipleOccurrencesArray)
+    FilterStore.shared.save()
+    TagStore.shared.save()
 }
 
 fileprivate func unmarkedExpensesOverview() {
@@ -40,7 +56,7 @@ fileprivate func unmarkedExpensesOverview() {
 }
 
 fileprivate func loadServices() {
-    TagStore.shared.addTagsFromCode()
+    FilterStore.shared.addTagsAndFiltersFromCode()
 }
 
 fileprivate func loadDescriptions() -> [String] {

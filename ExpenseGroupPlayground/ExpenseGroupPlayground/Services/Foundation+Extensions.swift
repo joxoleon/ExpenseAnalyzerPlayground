@@ -25,4 +25,15 @@ extension Array where Element == String {
     func removeDuplicates() -> [Element]{
         return Array(Set(self))
     }
+    
+}
+
+extension Array {
+    func removeElementsAppearingLessThan(numberOfTimes: Int) -> [Element] where Element: Hashable {
+        var counts = [Element: Int]()
+        for element in self {
+            counts[element, default: 0] += 1
+        }
+        return self.filter { counts[$0]! >= numberOfTimes }
+    }
 }
