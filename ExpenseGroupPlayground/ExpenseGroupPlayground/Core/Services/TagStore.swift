@@ -5,27 +5,19 @@
 //  Created by Jovan Radivojsa on 16.2.23..
 //
 
+import Foundation
+
 fileprivate enum TagStoreConstants {
     static let tagFileName = "tags.json"
 }
 
-import Foundation
-
-class Tag: Codable {
-    let name: String
-    let rules: [FilteringRule]
-    
-    init(name: String, rules: [FilteringRule]) {
-        self.name = name
-        self.rules = rules
-    }
-}
-
-class TagData: Codable {
-    var tags: [Tag] = []
-}
-
 class TagStore {
+    
+    // MARK: - Types
+    
+    class TagData: Codable {
+        var tags: [Tag] = []
+    }
     
     // MARK: - Singleton
     
@@ -75,8 +67,4 @@ class TagStore {
             tagsByName[tag.name] = tag
         }
     }
-}
-
-extension Tag: FilterProtocol {
-    var allRules: [Rule] { return rules }
 }

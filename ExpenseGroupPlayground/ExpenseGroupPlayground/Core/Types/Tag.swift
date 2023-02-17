@@ -1,11 +1,27 @@
 //
-//  Tag+Extensions.swift
+//  Tag.swift
 //  ExpenseGroupPlayground
 //
-//  Created by Jovan Radivojsa on 16.2.23..
+//  Created by Jovan Radivojsa on 17.2.23..
 //
 
 import Foundation
+
+class Tag: Codable {
+    let name: String
+    let rules: [FilteringRule]
+    
+    init(name: String, rules: [FilteringRule]) {
+        self.name = name
+        self.rules = rules
+    }
+}
+
+// MARK: - Extensions
+
+extension Tag: FilterProtocol {
+    var allRules: [Rule] { return rules }
+}
 
 extension Tag {
     
