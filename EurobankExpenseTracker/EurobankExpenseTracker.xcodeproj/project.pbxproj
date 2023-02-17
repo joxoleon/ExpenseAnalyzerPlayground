@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C0650A62299FF06A0076FCA2 /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0650A56299FF06A0076FCA2 /* Rule.swift */; };
+		C0650A63299FF06A0076FCA2 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0650A57299FF06A0076FCA2 /* Filter.swift */; };
+		C0650A64299FF06A0076FCA2 /* PersistableRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0650A58299FF06A0076FCA2 /* PersistableRule.swift */; };
+		C0650A65299FF06A0076FCA2 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0650A59299FF06A0076FCA2 /* Tag.swift */; };
+		C0650A66299FF06A0076FCA2 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0650A5B299FF06A0076FCA2 /* StorageManager.swift */; };
+		C0650A67299FF06A0076FCA2 /* TagStore+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0650A5D299FF06A0076FCA2 /* TagStore+Extensions.swift */; };
+		C0650A68299FF06A0076FCA2 /* TagStore+MainTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0650A5E299FF06A0076FCA2 /* TagStore+MainTags.swift */; };
+		C0650A69299FF06A0076FCA2 /* TagStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0650A5F299FF06A0076FCA2 /* TagStore.swift */; };
+		C0650A6A299FF06A0076FCA2 /* Foundation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0650A61299FF06A0076FCA2 /* Foundation+Extensions.swift */; };
 		C0D4166C299FEF5A003931F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D4166B299FEF5A003931F6 /* AppDelegate.swift */; };
 		C0D4166E299FEF5A003931F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D4166D299FEF5A003931F6 /* ViewController.swift */; };
 		C0D41670299FEF5C003931F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0D4166F299FEF5C003931F6 /* Assets.xcassets */; };
@@ -34,6 +43,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C0650A56299FF06A0076FCA2 /* Rule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rule.swift; sourceTree = "<group>"; };
+		C0650A57299FF06A0076FCA2 /* Filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		C0650A58299FF06A0076FCA2 /* PersistableRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistableRule.swift; sourceTree = "<group>"; };
+		C0650A59299FF06A0076FCA2 /* Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
+		C0650A5B299FF06A0076FCA2 /* StorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		C0650A5D299FF06A0076FCA2 /* TagStore+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TagStore+Extensions.swift"; sourceTree = "<group>"; };
+		C0650A5E299FF06A0076FCA2 /* TagStore+MainTags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TagStore+MainTags.swift"; sourceTree = "<group>"; };
+		C0650A5F299FF06A0076FCA2 /* TagStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagStore.swift; sourceTree = "<group>"; };
+		C0650A61299FF06A0076FCA2 /* Foundation+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Foundation+Extensions.swift"; sourceTree = "<group>"; };
 		C0D41668299FEF5A003931F6 /* EurobankExpenseTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EurobankExpenseTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0D4166B299FEF5A003931F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0D4166D299FEF5A003931F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +90,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C0650A54299FF06A0076FCA2 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				C0650A55299FF06A0076FCA2 /* Types */,
+				C0650A5A299FF06A0076FCA2 /* Storage */,
+				C0650A5C299FF06A0076FCA2 /* Services */,
+				C0650A60299FF06A0076FCA2 /* Utility */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		C0650A55299FF06A0076FCA2 /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				C0650A56299FF06A0076FCA2 /* Rule.swift */,
+				C0650A57299FF06A0076FCA2 /* Filter.swift */,
+				C0650A58299FF06A0076FCA2 /* PersistableRule.swift */,
+				C0650A59299FF06A0076FCA2 /* Tag.swift */,
+			);
+			path = Types;
+			sourceTree = "<group>";
+		};
+		C0650A5A299FF06A0076FCA2 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				C0650A5B299FF06A0076FCA2 /* StorageManager.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		C0650A5C299FF06A0076FCA2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C0650A5D299FF06A0076FCA2 /* TagStore+Extensions.swift */,
+				C0650A5E299FF06A0076FCA2 /* TagStore+MainTags.swift */,
+				C0650A5F299FF06A0076FCA2 /* TagStore.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C0650A60299FF06A0076FCA2 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				C0650A61299FF06A0076FCA2 /* Foundation+Extensions.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		C0D4165F299FEF5A003931F6 = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +161,7 @@
 		C0D4166A299FEF5A003931F6 /* EurobankExpenseTracker */ = {
 			isa = PBXGroup;
 			children = (
+				C0650A54299FF06A0076FCA2 /* Core */,
 				C0D4166B299FEF5A003931F6 /* AppDelegate.swift */,
 				C0D4166D299FEF5A003931F6 /* ViewController.swift */,
 				C0D4166F299FEF5C003931F6 /* Assets.xcassets */,
@@ -251,8 +318,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0650A6A299FF06A0076FCA2 /* Foundation+Extensions.swift in Sources */,
+				C0650A69299FF06A0076FCA2 /* TagStore.swift in Sources */,
+				C0650A67299FF06A0076FCA2 /* TagStore+Extensions.swift in Sources */,
+				C0650A68299FF06A0076FCA2 /* TagStore+MainTags.swift in Sources */,
+				C0650A65299FF06A0076FCA2 /* Tag.swift in Sources */,
+				C0650A62299FF06A0076FCA2 /* Rule.swift in Sources */,
+				C0650A63299FF06A0076FCA2 /* Filter.swift in Sources */,
+				C0650A66299FF06A0076FCA2 /* StorageManager.swift in Sources */,
 				C0D4166E299FEF5A003931F6 /* ViewController.swift in Sources */,
 				C0D4166C299FEF5A003931F6 /* AppDelegate.swift in Sources */,
+				C0650A64299FF06A0076FCA2 /* PersistableRule.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
